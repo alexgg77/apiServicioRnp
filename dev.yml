@@ -1,13 +1,13 @@
 version: "3.0"
 services:
     tse_padron_api_dev:
-      container_name: tse_padron_api_dev
+      container_name: tse_consultapadron_api_dev
       build:
         context: .
-      image: tse_padron_api_dev
+      image: tse_consultapadron_api_dev
       restart: unless-stopped
       ports:
-      - "5004:5004"
+      - "5001:5001"
       networks:
       - default
       environment:
@@ -19,6 +19,9 @@ services:
         - CERTIFICATE_API_URL=http://192.168.79.66:3003
         - CERTIFICATE_SIGN_URL= http://192.168.79.66:5000
         - REQUEST_ROUTE=certificado_trabajador_solicitudes_dev
+      volumes:
+         - /etc/localtime:/etc/localtime:ro
+         - /etc/timezone:/etc/timezone:ro
 networks:
   default:
     external:
