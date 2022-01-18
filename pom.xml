@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Ixmukane-api</name>
+	<name>tse-consutlapadron-api</name>
 	<description>Data server of Ixmukane - tracer module</description>
 
 	<parent>
