@@ -6,9 +6,9 @@ spring:
         #url: jdbc:oracle:thin:@//192.168.79.134:1521/WEBCP
         #username: WEBCERTIFICACION
         #password: TDtu5#43A
-        url: jdbc:oracle:thin:@//100.100.1.102/DESA
-        username: RNPSOLICITUD
-        password: lafacil
+        url: ${BD_USER:jdbc:oracle:thin:@//100.100.1.102:1521/DESA}
+        username: ${BD_USER:RNPSOLICITUD}
+        password: ${BD_PASSWORD:lafacil}
         # driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver #Enable to SQL SERVER
         initialization-mode: always
         

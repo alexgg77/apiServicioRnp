@@ -11,9 +11,9 @@ services:
       networks:
       - default
       environment:
-        - BD_URL=jdbc:oracle:thin:@//192.168.79.70:1521/PBAS
-        - BD_USER=WEBCERTIFICACION
-        - BD_PASSWORD=TDtu5#43A
+        - BD_URL=jdbc:oracle:thin:@//100.100.1.102/DESA
+        - BD_USER=RNPSOLICITUD
+        - BD_PASSWORD=lafacil
         - SSO_API_URL=http://192.168.79.67:9763
         - FILES_API_URL=http://192.168.79.66:3005
         - CERTIFICATE_API_URL=http://192.168.79.66:3003
