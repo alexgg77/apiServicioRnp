@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="historico_afiliacion", schema="WEBCERTIFICACION")
+//@Table(name="historico_afiliacion")
 public class HistoricoAfiliacionModel implements Serializable{
 		
 	
