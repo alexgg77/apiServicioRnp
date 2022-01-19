@@ -17,17 +17,17 @@ import com.example.springsocial.payload.AuthResponse;
 import com.example.springsocial.payload.LoginRequest;
 import com.example.springsocial.security.TokenProvider;
 
-@RestController
-@RequestMapping("/auth")
+//@RestController
+//@RequestMapping("auth")
 public class AuthController {
 
-    @Autowired
+   /* @Autowired
     private AuthenticationManager authenticationManager;
 
     @Autowired
     private TokenProvider tokenProvider;
 
-    @PostMapping("/login")
+    @PostMapping("login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
         Authentication authentication = authenticationManager.authenticate(
@@ -41,7 +41,5 @@ public class AuthController {
 
         String token = tokenProvider.createToken(authentication);
         return ResponseEntity.ok(new AuthResponse(token));
-    }
-
-
+    }*/
 }

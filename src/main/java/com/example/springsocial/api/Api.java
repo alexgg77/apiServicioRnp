@@ -15,6 +15,9 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import com.alibaba.fastjson.JSON;
 import com.example.springsocial.tools.RestResponse;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -100,6 +103,13 @@ public class Api {
 	public RestResponse getRestResponse() {
     	return JSON.parseObject(this.result,RestResponse.class);
     }
+	public RestResponse getResult() throws JsonProcessingException {
+		return convertAtJSONTYPE(RestResponse.class);
+	}
+	public <T> T convertAtJSONTYPE(Class<T> ObjetoClase) throws JsonProcessingException {
+		Gson gson = new Gson();		
+		return gson.fromJson(this.result, ObjetoClase);		
+	}
    
 	
     public void sendPost() throws Exception {

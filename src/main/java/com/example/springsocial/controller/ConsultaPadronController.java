@@ -1,6 +1,9 @@
 package com.example.springsocial.controller;
 
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import javax.servlet.http.HttpServletRequest;
@@ -36,13 +39,17 @@ public class ConsultaPadronController {
 	private JSONObject objetoRespuesta;
 	private ConsultarTrenapn consultaTrenapn;
 	private static final String messageEmpadronado="SI SE ENCUENTRA EMPADRONADO", messageNoEmpadronado="NO SE ENCUENTRA EMPADRONADO";
+	private Logger logger = Logger.getLogger(ConsultaPadronController.class.getName());
 	
-	
-	@GetMapping("ConsultaPorCui/{cui}")
-    public RestResponse consulaCui(HttpServletRequest request,@PathVariable String cui) throws Exception, CustomException {
+	@GetMapping("list/{cui}")
+    public RestResponse consulaCui(@CurrentUser UserPrincipal userprincipal, HttpServletRequest request,@PathVariable String cui) throws Exception, CustomException {
 		RestResponse response = new RestResponse();
+		
 		objetoRespuesta=new JSONObject();
-		String cuis = null;
+		String cuis = null;				
+		logger.log(Level.INFO,"user: "+userprincipal.getUsername()+" password: "+userprincipal.getAuthorities()+" cui: "+cui);
+		if(!userprincipal.hasPermissionToRoute(request)) return new RestResponse(null, new CustomException("Acceso denegado", ErrorCode.ACCESS_DENIED,
+				this.getClass().getSimpleName(), 0));
 		try {
 			cuis= repository.consultaPorCui(cui);
 			

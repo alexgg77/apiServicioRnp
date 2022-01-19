@@ -13,11 +13,11 @@ import com.example.springsocial.tools.RestResponse;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.example.springsocial.repository.CompanyRepository;
 
-@SuppressWarnings({"rawtypes","unchecked"})
-@RestController
-@RequestMapping("company")
+//@SuppressWarnings({"rawtypes","unchecked"})
+//@RestController
+//@RequestMapping("company")
 public class CompanyController   {
-	@Autowired
+	/*@Autowired
 	private CompanyRepository repository;	    
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -41,6 +41,6 @@ public class CompanyController   {
 			response.setError(ex.getMessage());
 		}
 		return response;
-    }
+    }*/
 }
 

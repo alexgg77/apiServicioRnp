@@ -19,11 +19,9 @@ import com.example.springsocial.security.CurrentUser;
 import com.example.springsocial.security.UserPrincipal;
 import com.example.springsocial.tools.RestResponse;
 
-@SuppressWarnings({"rawtypes","unchecked"})
-@RestController
-@RequestMapping("verificarDatosPadron")
+
 public class VerificarDatosPadronController {
-	@Autowired
+	/*@Autowired
 	private PadronElectoralRepository repository;	  	
 	
 	@GetMapping("verificarAfiliacion/{cui}")
@@ -81,6 +79,6 @@ public class VerificarDatosPadronController {
 		}
 		
     	return response;
-    }
+    }*/
 	
 }
