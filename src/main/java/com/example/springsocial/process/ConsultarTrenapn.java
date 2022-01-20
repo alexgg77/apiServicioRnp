@@ -60,7 +60,7 @@ public class ConsultarTrenapn {
 	private String cui;
 	private JSONObject objetoRespuesta;
 	private Integer control;
-	private static final String messageEmpadronado="SI EMPADRONADO", messageNoEmpadronado="NO SE ENCUENTRA EMPADRONADO";
+	private static final String messageEmpadronado="VIGENTE", messageNoEmpadronado="NO SE ENCUENTRA EMPADRONADO";
 	
 	public void setEntityManagerFactory(EntityManagerFactory entityManagerFactory) {if(entityManagerFactory!=null) this.entityManagerFactory=entityManagerFactory;}
 	public void setRepository(TrenapnRepository repositoryrenap,TpadronRepository repository,TcedulaRepository repositorycedula,Tpadron16Repository repositorypadron16) {
@@ -147,8 +147,8 @@ public class ConsultarTrenapn {
 							listaTpadron.get(i).getGenero().equals(modelTrenapvista.getGenero())
 					) {
 						control=1;
-						objetoRespuesta.put("estaEmpadronado", true);
-						objetoRespuesta.put("message", messageEmpadronado);
+						objetoRespuesta.put("cui", cui);
+						objetoRespuesta.put("resultado", messageEmpadronado);
 						logger.log(Level.INFO,"DENTRO DE IF");
 					}
 				}
@@ -159,8 +159,8 @@ public class ConsultarTrenapn {
 	private void setRespuesta() {
 		objetoRespuesta=new JSONObject();
 		if(control==0) {
-			objetoRespuesta.put("estaEmpadronado", false);
-			objetoRespuesta.put("message", messageNoEmpadronado);
+			objetoRespuesta.put("cui", cui);
+			objetoRespuesta.put("resultado", messageNoEmpadronado);
 		}
 	}
 	
