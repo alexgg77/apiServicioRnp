@@ -7,10 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import com.example.springsocial.model.TcedulaModel;
+import com.example.springsocial.model.TcedulaVista;
 
 
-public interface TcedulaRepository extends CrudRepository<TcedulaModel,Long>,JpaRepository<TcedulaModel,Long>{
+public interface TcedulaRepository extends CrudRepository<TcedulaVista,Long>,JpaRepository<TcedulaVista,Long>{
 	
-	@Query(value="SELECT * FROM tcedula WHERE registroced=:registro AND ordenced=:orden",nativeQuery = true)
-	List< TcedulaModel> consultaPorCedula(@Param("orden") String orden,@Param("registro") Long registro );
+	@Query(value="select * from tcedula where ordenced=:orden and registroced=:registro",nativeQuery = true)
+	List< TcedulaVista> consultaPorCedula(@Param("orden") String orden,@Param("registro") Long registro );
 }

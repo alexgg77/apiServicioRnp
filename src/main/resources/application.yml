@@ -3,9 +3,9 @@ spring:
         driver-class-name: oracle.jdbc.OracleDriver # Enable to ORACLE
         #driverClassName: com.mysql.cj.jdbc.Driver # mysql
         # url: ${BD_URL:jdbc:mysql://192.168.79.66/certificaciones} # mysql
-        url: jdbc:oracle:thin:@//100.100.1.102:1521/DESA
-        username: RNPSOLICITUD
-        password: lafacil
+        url: jdbc:oracle:thin:@//100.100.1.96:1521/TSEP3
+        username: WSRNPCONSULTA
+        password:  W5RN7QR7
         #url: ${BD_USER:jdbc:oracle:thin:@//100.100.1.102:1521/DESA}
         #username: ${BD_USER:RNPSOLICITUD}
         #password: ${BD_PASSWORD:lafacil}
