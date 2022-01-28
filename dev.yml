@@ -4,10 +4,12 @@ services:
       container_name: tse_consultapadron_api_dev
       build:
         context: .
-      image: tse_consultapadron_api_dev
+      image: tse_consultapadron_api_dev 
+      deploy:
+       replicas: 20
+       ports:
+       - "5001-5020:80"
       restart: unless-stopped
-      ports:
-      - "5001:5001"
       networks:
       - default
       environment:
