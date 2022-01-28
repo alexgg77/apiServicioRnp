@@ -7,7 +7,7 @@ services:
       image: tse_consultapadron_api_dev 
       deploy:
        replicas: 20
-       ports:
+      ports:
        - "5001-5020:80"
       restart: unless-stopped
       networks:
